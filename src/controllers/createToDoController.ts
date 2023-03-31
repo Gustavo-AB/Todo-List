@@ -1,10 +1,13 @@
 import { Request, Response } from "express"
 import { ITodoDTO } from "../interfaces/ITodo"
 import { CreateTodoService } from "../services/createTodoService"
+import { ITodoService } from "../interfaces/ITodoService"
 
 
 
 export class CreateToDoController {
+
+    constructor(private todoService: ITodoService){}
     
     async handle(request:Request, response:Response){
         const todo:ITodoDTO = request.body
@@ -16,8 +19,8 @@ export class CreateToDoController {
             }
         })
         
-        const todoService = new CreateTodoService();
-        todoService.execute(todo)
+        
+        this.todoService.create(todo)
             .then(data => {
                 return response.status(201).json({msg:"Todo has created",data:data})
             }).catch( err => {
@@ -27,5 +30,3 @@ export class CreateToDoController {
             })     
     }
 }
-
-export const createToDoController = new CreateToDoController()
