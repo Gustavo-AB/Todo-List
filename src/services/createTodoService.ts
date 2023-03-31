@@ -1,18 +1,18 @@
-import { ITodoDTO } from "../interfaces/ITodo";
+import { IToDoDTO } from "../interfaces/IToDoDTO";
 import { PrismaClient } from '@prisma/client'
 import { v4 as uuidv4 } from "uuid"
-import { ITodoService } from "../interfaces/ITodoService";
-import { TodoModel } from "../interfaces/TodoModel";
+import { IToDoService } from "../interfaces/IToDoService";
+import { ToDoModel } from "../interfaces/ToDoModel";
 
 
 
 
-export class CreateTodoService implements ITodoService {
+export class CreateToDoService implements IToDoService {
     private prisma = new PrismaClient()
 
-    async create(todoData:ITodoDTO):Promise<TodoModel>{
+    async create(todoData:IToDoDTO):Promise<ToDoModel>{
 
-        const todo:TodoModel = await this.prisma.todo.create({
+        const todo:ToDoModel = await this.prisma.todo.create({
             data:{
                 id: parseInt(uuidv4()),
                 name: todoData.name,
