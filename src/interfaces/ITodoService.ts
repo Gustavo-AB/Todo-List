@@ -1,7 +1,7 @@
-import { ITodoDTO } from "./ITodo";
-import { TodoModel } from "./TodoModel";
+import { IToDoDTO } from "./IToDoDTO";
+import { ToDoModel } from "./ToDoModel";
 
 
-export interface ITodoService {
-    create(todo:ITodoDTO):Promise<TodoModel>
+export interface IToDoService {
+    create(todo:IToDoDTO):Promise<ToDoModel>
 }

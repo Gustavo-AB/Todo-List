@@ -1,6 +1,6 @@
 
 
-export interface TodoModel {
+export interface ToDoModel {
     id:number
     name:string
     description: string

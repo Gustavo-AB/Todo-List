@@ -1,9 +1,14 @@
-import { ITodoService } from "../interfaces/ITodoService";
-import { CreateTodoService } from "../services/createTodoService";
+import { IToDoService } from "../interfaces/IToDoService";
+import { CreateToDoService } from "../services/createToDoService";
+import { GetToDosService } from "../services/getToDosService";
 import { CreateToDoController } from "./createToDoController";
+import { GetToDosController } from "./getToDosController";
 
 
-const todoService: ITodoService = new CreateTodoService();
+const todoService: IToDoService = new CreateToDoService();
 const createToDoController = new CreateToDoController(todoService);
 
-export { createToDoController }
+const getToDosService = new GetToDosService()
+const getToDos = new GetToDosController(getToDosService)
+
+export { createToDoController, getToDos }
