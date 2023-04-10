@@ -1,6 +1,6 @@
 import { Request, Response } from "express"
 import { IToDoDTO } from "../interfaces/IToDoDTO"
-import { IToDoService } from "../interfaces/IToDoService"
+import { IToDoService } from "../interfaces/ITodoService"
 
 
 export class CreateToDoController {
@@ -19,7 +19,7 @@ export class CreateToDoController {
         
         this.todoService.create(todo)
             .then(data => {
-                return response.status(201).json({msg:"Todo has created",data:data})
+                return response.status(201).json({msg:"Sucesso",data:data})
             }).catch( err => {
                 console.log(err);
                 
