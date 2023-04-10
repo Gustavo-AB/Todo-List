@@ -1,8 +1,8 @@
 import { IToDoDTO } from "../interfaces/IToDoDTO";
 import { PrismaClient } from '@prisma/client'
 import { v4 as uuidv4 } from "uuid"
-import { IToDoService } from "../interfaces/IToDoService";
 import { ToDoModel } from "../interfaces/ToDoModel";
+import { IToDoService } from "../interfaces/ITodoService";
 
 
 
