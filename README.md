@@ -14,13 +14,13 @@
 }
 </p>
 <h2></h2>
-<p>Requisição do tipo GET</p>
 <h3>Obter todas as ToDos</h3>
+<p>Requisição do tipo GET</p>
 <p><i>http://localhost:3333/get_todos</i></p>
 <p>E ai vc vai ter todas as ToDos criadas</p>
 <h2></h2>
-<p>Requisição do tipo PUT</p>
 <h3>Atualizar para concluida</h3>
+<p>Requisição do tipo PUT</p>
 <p>É necessario passar o id da ToDo que será atualizada, e é possivel obter o id pela rota de get, ai passa o id no header da requisição e um json com o campo ex:</p>
 <p><i>http://localhost:3333/finished</i></p>
 <p>
